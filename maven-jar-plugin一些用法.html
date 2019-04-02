@@ -96,20 +96,25 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Freesolo">
-<meta property="og:url" content="http://yoursite.com/categories/构建工具/index.html">
+  <meta name="description" content="不打默认包我们在不需要默认包的时候，可以如下设置 &amp;lt;execution&amp;gt;     &amp;lt;id&amp;gt;default-jar&amp;lt;/id&amp;gt;     &amp;lt;phase&amp;gt;none&amp;lt;/phase&amp;gt; &amp;lt;/execution&amp;gt; 只打包指定的package里面内容，并且打包后不包括pom的描述文件&amp;lt;execution&amp;gt;     &amp;lt;id&amp;gt">
+<meta name="keywords" content="-maven">
+<meta property="og:type" content="website">
+<meta property="og:title" content="maven-jar-plugin一些用法">
+<meta property="og:url" content="http://yoursite.com/maven-jar-plugin一些用法.html">
 <meta property="og:site_name" content="Freesolo">
+<meta property="og:description" content="不打默认包我们在不需要默认包的时候，可以如下设置 &amp;lt;execution&amp;gt;     &amp;lt;id&amp;gt;default-jar&amp;lt;/id&amp;gt;     &amp;lt;phase&amp;gt;none&amp;lt;/phase&amp;gt; &amp;lt;/execution&amp;gt; 只打包指定的package里面内容，并且打包后不包括pom的描述文件&amp;lt;execution&amp;gt;     &amp;lt;id&amp;gt">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-04-02T11:34:21.289Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Freesolo">
+<meta name="twitter:title" content="maven-jar-plugin一些用法">
+<meta name="twitter:description" content="不打默认包我们在不需要默认包的时候，可以如下设置 &amp;lt;execution&amp;gt;     &amp;lt;id&amp;gt;default-jar&amp;lt;/id&amp;gt;     &amp;lt;phase&amp;gt;none&amp;lt;/phase&amp;gt; &amp;lt;/execution&amp;gt; 只打包指定的package里面内容，并且打包后不包括pom的描述文件&amp;lt;execution&amp;gt;     &amp;lt;id&amp;gt">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/构建工具/">
+  <link rel="canonical" href="http://yoursite.com/maven-jar-plugin一些用法.html">
 
 
 
@@ -119,7 +124,7 @@
   };
 </script>
 
-  <title>分类: -构建工具 | Freesolo</title>
+  <title>maven-jar-plugin一些用法 | Freesolo</title>
   
 
 
@@ -167,7 +172,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -260,7 +265,7 @@
         
         
           
-          <li class="menu-item menu-item-categories menu-item-active">
+          <li class="menu-item menu-item-categories">
 
     
     
@@ -345,57 +350,86 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
+    
+    
+    <div class="post-block page">
+      <header class="post-header">
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>-构建工具<small>分类</small>
-        </h1>
-      </div>
+<h1 class="post-title" itemprop="name headline">maven-jar-plugin一些用法
+
+</h1>
+
+<div class="post-meta">
+  
+  
+
+
+
+</div>
+
+</header>
 
       
+      
+      
+      <div class="post-body">
         
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
         
-          <a class="post-title-link" href="/2019/04/02/maven-jar-plugin一些用法/" itemprop="url">
-            
-              <span itemprop="name">maven-jar-plugin一些用法</span>
-            
-          </a>
+          <h3 id="不打默认包"><a href="#不打默认包" class="headerlink" title="不打默认包"></a>不打默认包</h3><pre><code>我们在不需要默认包的时候，可以如下设置
+&lt;execution&gt;
+    &lt;id&gt;default-jar&lt;/id&gt;
+    &lt;phase&gt;none&lt;/phase&gt;
+&lt;/execution&gt;
+</code></pre><h3 id="只打包指定的package里面内容，并且打包后不包括pom的描述文件"><a href="#只打包指定的package里面内容，并且打包后不包括pom的描述文件" class="headerlink" title="只打包指定的package里面内容，并且打包后不包括pom的描述文件"></a>只打包指定的package里面内容，并且打包后不包括pom的描述文件</h3><pre><code>&lt;execution&gt;
+    &lt;id&gt;openvpn3&lt;/id&gt;
+        &lt;goals&gt;
+            &lt;goal&gt;jar&lt;/goal&gt;
+        &lt;/goals&gt;
+    &lt;phase&gt;package&lt;/phase&gt;
+    &lt;configuration&gt;
+        &lt;classifier&gt;client&lt;/classifier&gt;
+        &lt;outputDirectory&gt;target&lt;/outputDirectory&gt;
+        &lt;finalName&gt;openvpn3&lt;/finalName&gt;
+            &lt;includes&gt;
+                &lt;include&gt;**/openvpn3/**&lt;/include&gt;
+            &lt;/includes&gt;
+        &lt;archive&gt;
+            &lt;addMavenDescriptor&gt;false&lt;/addMavenDescriptor&gt;打包后不包括pom的描述文件
+            &lt;manifest&gt;
+                &lt;addClasspath&gt;false&lt;/addClasspath&gt;
+            &lt;/manifest&gt;
+        &lt;/archive&gt;
+    &lt;/configuration&gt;
+&lt;/execution&gt;    
+</code></pre>
         
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-02T18:19:58+08:00" content="2019-04-02">
-          04-02
-        </time>
       </div>
-
-    </header>
-  </article>
-
-
+      
+      
       
     </div>
+    
 
+
+
+    
+    
+    
   </div>
-  
-  
-  
-
-  
-
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+  
+
+
 
         </div>
         
@@ -415,8 +449,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -429,52 +472,9 @@
           
             <nav class="site-state motion-element">
               
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">1</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
-                </div>
-              
 
               
-                
-                
-                <div class="site-state-item site-state-categories">
-                  
-                    
-                      <a href="/categories/">
-                    
-                  
-                    
-                    
-                      
-                    
-                    <span class="site-state-item-count">1</span>
-                    <span class="site-state-item-name">分类</span>
-                  </a>
-                </div>
-              
 
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  
-                    
-                      <a href="/tags/">
-                    
-                  
-                    
-                    
-                      
-                    
-                    <span class="site-state-item-count">1</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
               
             </nav>
           
@@ -498,6 +498,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#不打默认包"><span class="nav-number">1.</span> <span class="nav-text">不打默认包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#只打包指定的package里面内容，并且打包后不包括pom的描述文件"><span class="nav-number">2.</span> <span class="nav-text">只打包指定的package里面内容，并且打包后不包括pom的描述文件</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -629,6 +646,10 @@
 
 
   
+  <script src="/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/js/src/post-details.js?v=7.0.1"></script>
+
+
 
   
 
@@ -674,6 +695,8 @@
 
 
 
+
+  
 
 
   
