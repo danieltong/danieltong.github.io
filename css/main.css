@@ -1750,31 +1750,19 @@ pre .javascript .function {
 .sidebar-toggle-line:first-child {
   margin-top: 0;
 }
+# 头像显示圆形,
 .site-author-image {
   display: block;
   margin: 0 auto;
   padding: 2px;
   max-width: 120px;
   height: auto;
-  border: 1px solid #eee;
+  border: site-author-image-border-color;
   border-radius: 50%;
   webkit-transition: 1.4s all;
   moz-transition: 1.4s all;
   ms-transition: 1.4s all;
   transition: 1.4s all;
-/* end */
-}
-.site-author-name {
-  margin: 0;
-  text-align: center;
-  color: #222;
-  font-weight: 600;
-}
-.site-description {
-  margin-top: 0;
-  text-align: center;
-  font-size: 13px;
-  color: #999;
 }
 .site-author-image:hover {
   background-color: #55dae1;
@@ -1855,7 +1843,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #e093fc;
+  background: #73c2ff;
 }
 .links-of-blogroll {
   margin-top: 10px;
