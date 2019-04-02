@@ -1777,7 +1777,7 @@ pre .javascript .function {
   color: #999;
 }
 .site-author-image:hover {
-  background-color: #55dae1;
+  background-color: #fff;
   webkit-transform: rotate(360deg) scale(1.1);
   moz-transform: rotate(360deg) scale(1.1);
   ms-transform: rotate(360deg) scale(1.1);
@@ -1855,7 +1855,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff7c4d;
+  background: #6965ff;
 }
 .links-of-blogroll {
   margin-top: 10px;
