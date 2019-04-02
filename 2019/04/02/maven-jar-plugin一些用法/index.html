@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="Freesolo">
 <meta property="og:description" content="不打默认包我们在不需要默认包的时候，可以如下设置 &amp;lt;execution&amp;gt;     &amp;lt;id&amp;gt;default-jar&amp;lt;/id&amp;gt;     &amp;lt;phase&amp;gt;none&amp;lt;/phase&amp;gt; &amp;lt;/execution&amp;gt; 只打包指定的package里面内容，并且打包后不包括pom的描述文件&amp;lt;execution&amp;gt;     &amp;lt;id&amp;gt">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-02T11:35:51.370Z">
+<meta property="og:updated_time" content="2019-04-02T11:43:47.921Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="maven-jar-plugin一些用法">
 <meta name="twitter:description" content="不打默认包我们在不需要默认包的时候，可以如下设置 &amp;lt;execution&amp;gt;     &amp;lt;id&amp;gt;default-jar&amp;lt;/id&amp;gt;     &amp;lt;phase&amp;gt;none&amp;lt;/phase&amp;gt; &amp;lt;/execution&amp;gt; 只打包指定的package里面内容，并且打包后不包括pom的描述文件&amp;lt;execution&amp;gt;     &amp;lt;id&amp;gt">
@@ -387,7 +387,7 @@
                 
               
 
-              <time title="创建时间：2019-04-02 18:19:58 / 修改时间：19:35:51" itemprop="dateCreated datePublished" datetime="2019-04-02T18:19:58+08:00">2019-04-02</time>
+              <time title="创建时间：2019-04-02 18:19:58 / 修改时间：19:43:47" itemprop="dateCreated datePublished" datetime="2019-04-02T18:19:58+08:00">2019-04-02</time>
             
 
             
@@ -483,6 +483,8 @@
         &lt;/archive&gt;
     &lt;/configuration&gt;
 &lt;/execution&gt;    
+</code></pre><h3 id="只生成指定的jar包"><a href="#只生成指定的jar包" class="headerlink" title="只生成指定的jar包"></a>只生成指定的jar包</h3><pre><code>mvn -f ../../gui/pom.xml compile jar:jar@excutionid
+按照上面例子，这样就只会编译打包出来openvpn3-client.jar
 </code></pre>
       
     </div>
@@ -678,7 +680,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#不打默认包"><span class="nav-number">1.</span> <span class="nav-text">不打默认包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#只打包指定的package里面内容，并且打包后不包括pom的描述文件"><span class="nav-number">2.</span> <span class="nav-text">只打包指定的package里面内容，并且打包后不包括pom的描述文件</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#不打默认包"><span class="nav-number">1.</span> <span class="nav-text">不打默认包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#只打包指定的package里面内容，并且打包后不包括pom的描述文件"><span class="nav-number">2.</span> <span class="nav-text">只打包指定的package里面内容，并且打包后不包括pom的描述文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#只生成指定的jar包"><span class="nav-number">3.</span> <span class="nav-text">只生成指定的jar包</span></a></li></ol></div>
             
 
           </div>
